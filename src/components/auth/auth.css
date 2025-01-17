@@ -1,0 +1,208 @@
+:root {
+  --auth-primary: #3498db;
+  --auth-secondary: #2ecc71;
+  --auth-text: #2c3e50;
+  --auth-bg: #f4f6f7;
+  --auth-transition: 0.3s;
+  --auth-error: #e74c3c;
+  --auth-success: #2ecc71;
+}
+
+.login-signup-global * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.login-signup-body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: var(--auth-bg);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.login-signup-wrapper {
+  display: flex;
+  height: 75vh;
+  max-width: 1200px;
+  margin: 5vh auto 5vh calc(2vw);
+  margin-left: 18vh;
+  margin-top: 12vh;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.login-signup-image {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  transition: transform var(--auth-transition) ease;
+}
+
+.login-signup-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+}
+
+.login-signup-form-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background: white;
+  position: relative;
+}
+
+.login-signup-home-link {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  color: var(--auth-primary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color var(--auth-transition) ease;
+}
+
+.login-signup-home-link:hover {
+  color: var(--auth-secondary);
+}
+
+.login-signup-form {
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+  text-align: center;
+  background: white;
+  border-radius: 12px;
+  transform: translateY(20px);
+  opacity: 0;
+  animation: loginSignupFadeIn 0.6s forwards;
+}
+
+@keyframes loginSignupFadeIn {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.login-signup-title {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: var(--auth-text);
+  font-weight: 700;
+}
+
+.login-signup-subtitle {
+  margin-bottom: 1.5rem;
+  color: #6c757d;
+}
+
+.login-signup-input,
+.login-signup-select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all var(--auth-transition) ease;
+  appearance: none;
+}
+
+.login-signup-input:focus,
+.login-signup-select:focus {
+  outline: none;
+  border-color: var(--auth-primary);
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+.login-signup-select {
+  background-image: url("data:image/svg+xml;utf8,<svg fill='%233498db' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  cursor: pointer;
+}
+
+.login-signup-button {
+  width: 100%;
+  padding: 0.75rem;
+  background: var(--auth-primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all var(--auth-transition) ease;
+  transform: translateY(0);
+}
+
+.login-signup-button:hover {
+  background: #2980b9;
+  transform: translateY(-3px);
+  box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+}
+
+.login-signup-button:active {
+  transform: translateY(1px);
+}
+
+.login-signup-error {
+  color: var(--auth-error);
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  animation: loginSignupShake 0.4s;
+}
+
+.login-signup-success {
+  color: var(--auth-success);
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+@keyframes loginSignupShake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+.login-signup-alt-link {
+  color: var(--auth-primary);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color var(--auth-transition) ease;
+}
+
+.login-signup-alt-link:hover {
+  color: var(--auth-secondary);
+  text-decoration: underline;
+}
+
+.login-signup-mt-3 {
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .login-signup-wrapper {
+    height: 100vh;
+    margin: 0;
+    max-width: 100%;
+    border-radius: 0;
+  }
+  
+  .login-signup-image {
+    display: none;
+  }
+}

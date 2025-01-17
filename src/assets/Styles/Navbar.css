@@ -1,0 +1,103 @@
+:root {
+  --primary-color: #4a6cf7;
+  --secondary-color: #6b7afc;
+  --background-color: #f5f7ff;
+  --text-color: #2c3e50;
+  --hover-color: rgba(74, 108, 247, 0.1);
+}
+
+.sidebar {
+  height: calc(100vh - 60px);
+  position: fixed;
+  left: 0;
+  top: 60px;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  overflow-x: hidden;
+  transition: width 0.3s ease;
+}
+
+.sidebar-toggle {
+  position: absolute;
+  top: 80px;
+  right: 20px;
+  cursor: pointer;
+  color: var(--primary-color);
+  z-index: 1001;
+}
+
+.sidebar-logo {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.logo-text {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--primary-color);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.sidebar.collapsed .logo-text {
+  font-size: 14px;
+}
+
+.sidebar-menu {
+  margin-top: 50px;
+}
+
+.menu-item {
+  display: block;
+  text-decoration: none;
+  color: var(--text-color);
+  padding: 12px 20px;
+  transition: background-color 0.3s ease;
+}
+
+.menu-item:hover {
+  background-color: var(--hover-color);
+}
+
+.menu-item.active {
+  background-color: var(--hover-color);
+  border-left: 4px solid var(--primary-color);
+}
+
+.menu-item-content {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.menu-item-content svg {
+  color: var(--primary-color);
+  min-width: 24px;
+}
+
+.menu-item-content span {
+  font-weight: 500;
+}
+
+.help-section {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  cursor: pointer;
+  padding: 12px 20px;
+  transition: background-color 0.3s ease;
+}
+
+.help-section:hover {
+  background-color: var(--hover-color);
+}
+
+.sidebar.collapsed {
+  width: 80px;
+}
+
+.sidebar.expanded {
+  width: 250px;
+}

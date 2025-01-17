@@ -1,0 +1,157 @@
+/* Root Colors (same as the sidebar theme) */
+:root {
+    --primary-color: #4a6cf7;
+    --secondary-color: #6b7afc;
+    --background-color: #f5f7ff;
+    --text-color: #2c3e50;
+    --hover-color: rgba(74, 108, 247, 0.1);
+    --error-color: #ff4d4f;
+    --success-color: #52c41a;
+}
+
+.help-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    padding: 20px;
+    transition: opacity 0.3s ease;
+}
+
+.help-modal {
+    background-color: white;
+    border-radius: 8px;
+    width: 500px;
+    padding: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.help-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.help-icon-container {
+    position: relative;
+    cursor: help;
+}
+
+.help-tooltip {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--text-color);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.help-modal-header h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-color);
+    margin: 0;
+    margin-left: 10px;
+}
+
+.help-modal-header button {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.help-modal-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-group label {
+    font-size: 14px;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+.form-group input.error,
+.form-group textarea.error {
+    border-color: var(--error-color);
+}
+
+.error-message {
+    color: var(--error-color);
+    font-size: 12px;
+    margin: 0;
+}
+
+.help-modal-content button.submit-help {
+    align-self: flex-start;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.help-modal-content button.submit-help:hover {
+    background-color: var(--secondary-color);
+}
+
+.status-popup {
+    position: absolute;
+    bottom: -60px;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.status-popup.success {
+    background-color: var(--success-color);
+    color: white;
+}
+
+.status-popup.error {
+    background-color: var(--error-color);
+    color: white;
+}

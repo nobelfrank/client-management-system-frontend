@@ -1,0 +1,112 @@
+:root {
+  --primary-color: #4a6cf7;
+  --secondary-color: #6b7afc;
+  --background-color: #f5f7ff;
+  --text-color: #2c3e50;
+  --hover-color: rgba(74, 108, 247, 0.1);
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: white;
+  box-shadow: 0 4px 6px var(--shadow-color);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1100;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.header-date {
+  font-weight: 500;
+  color: var(--text-color);
+  font-size: 1rem;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.notifications-icon {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logout-icon {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* No Access Popup Styles */
+.no-access-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1200;
+}
+
+.no-access-content {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  text-align: center;
+  max-width: 400px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.no-access-content h3 {
+  margin: 1rem 0;
+  color: var(--text-color);
+  font-size: 1.25rem;
+}
+
+.no-access-content p {
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+}
+
+.close-no-access-btn {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.close-no-access-btn:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+    gap: 1rem;
+  }
+}

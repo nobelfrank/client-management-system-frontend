@@ -1,0 +1,295 @@
+/* BulkInsert.css */
+
+/* Layout Styles */
+.bulk-insert-container {
+  min-height: 100vh;
+  background-color: rgb(249, 250, 251);
+  padding: 2rem 1rem;
+}
+
+.bulk-insert-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.bulk-insert-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: rgb(31, 41, 55);
+  line-height: 2.25rem;
+}
+
+/* Card Styles */
+.bulk-card {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  border: 1px solid rgb(229, 231, 235);
+  transition: box-shadow 0.3s ease-in-out;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.bulk-card:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.card-header {
+  border-bottom: 1px solid rgb(229, 231, 235);
+  background-color: rgb(249, 250, 251);
+  padding: 1rem 1.5rem;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.header-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: rgb(75, 85, 99);
+}
+
+.header-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: rgb(31, 41, 55);
+}
+
+.card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1;
+}
+
+/* Button Styles */
+.custom-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  width: 100%;
+}
+
+.custom-button:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px rgb(59, 130, 246, 0.5);
+}
+
+.custom-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Primary Button */
+.button-primary {
+  background-color: rgb(37, 99, 235);
+  color: white;
+}
+
+.button-primary:hover:not(:disabled) {
+  background-color: rgb(29, 78, 216);
+}
+
+/* Outline Button */
+.button-outline {
+  background-color: white;
+  border: 1px solid rgb(209, 213, 219);
+  color: rgb(55, 65, 81);
+}
+
+.button-outline:hover:not(:disabled) {
+  background-color: rgb(249, 250, 251);
+}
+
+/* File Input Styles */
+.file-input-wrapper {
+  position: relative;
+}
+
+.file-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Error Message Styles */
+.error-message {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border-radius: 0.375rem;
+  background-color: rgb(254, 242, 242);
+  color: rgb(220, 38, 38);
+  font-size: 0.875rem;
+}
+
+.error-icon {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+}
+
+/* Toast Notification Styles */
+.toast-container {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 50;
+  max-width: 28rem;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.toast {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.toast-success {
+  background-color: rgb(240, 253, 244);
+  border: 1px solid rgb(34, 197, 94);
+}
+
+.toast-error {
+  background-color: rgb(254, 242, 242);
+  border: 1px solid rgb(220, 38, 38);
+}
+
+.toast-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.toast-message {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.toast-success .toast-message {
+  color: rgb(21, 128, 61);
+}
+
+.toast-error .toast-message {
+  color: rgb(185, 28, 28);
+}
+
+/* Loading Spinner */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .bulk-insert-container {
+    padding: 1rem 0.5rem;
+  }
+
+  .bulk-insert-title {
+    font-size: 1.5rem;
+  }
+
+  .card-header {
+    padding: 0.75rem 1rem;
+  }
+
+  .card-body {
+    padding: 1rem;
+  }
+
+  .toast-container {
+    left: 1rem;
+    right: 1rem;
+    max-width: none;
+  }
+}
+
+/* Utility Classes */
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-gray-600 {
+  color: rgb(75, 85, 99);
+}
+
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.w-full {
+  width: 100%;
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.slide-in {
+  animation: slideIn 0.3s ease-out forwards;
+}
+
+.slide-out {
+  animation: slideOut 0.3s ease-in forwards;
+}

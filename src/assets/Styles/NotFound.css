@@ -1,0 +1,71 @@
+.not-found-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #f0f4f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.not-found-content {
+  text-align: center;
+  width: 100%;
+  padding: 2rem;
+  max-width: 800px;
+}
+
+.not-found-image {
+  max-width: 350px;
+  height: auto;
+  margin-bottom: 1.5rem;
+}
+
+.not-found-title {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.not-found-description {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.back-to-dashboard-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 12px 24px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.back-to-dashboard-btn:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.back-to-dashboard-btn .btn-icon {
+  transition: transform 0.3s ease;
+}
+
+.back-to-dashboard-btn:hover .btn-icon {
+  transform: translateX(3px);
+}
