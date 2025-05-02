@@ -69,7 +69,7 @@ body {
   }
   
   .delete-btn {
-    background-color: #dc3545;
+    background-color: #e73345;
     color: #fff;
   }
   
@@ -94,6 +94,7 @@ body {
   table {
     width: 100%;
     border-collapse: collapse;
+
   }
   
   th,

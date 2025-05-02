@@ -9,7 +9,6 @@ export const validateMappingData = (mappingData, existingMappings = []) => {
       errors.agentId = 'Please select an agent';
     }
   
-    // Check if this client-agent combination already exists (for new mappings)
     const duplicateMapping = existingMappings.find(
       mapping => 
         mapping.clientId === mappingData.clientId && 

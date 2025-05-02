@@ -4,7 +4,7 @@ import PolicyCard from '../policy/PolicyCard';
 import PolicyForm from '../policy/PolicyForm';
 import Notification from '../policy/Notification';
 import { validatePolicyData } from './validationUtils';
-import '../../assets/Styles/Mapping.css'
+import '../policy/Policy.css'
 
 const PolicyPage = () => {
   const [policies, setPolicies] = useState([]);

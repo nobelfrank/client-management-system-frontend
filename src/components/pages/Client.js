@@ -83,7 +83,7 @@ const [cities, setCities] = useState([]);
       lastName: apiData.lastName,
       email: apiData.email,
       phoneNumber: apiData.phoneNumber,
-      dateOfBirth: apiData.dob, // Match API field name
+      dateOfBirth: apiData.dob, 
       address: {
         street: apiData.address?.streetAddress || '',
         postalCode: apiData.address?.postalCode || '',

@@ -7,15 +7,13 @@ const ProtectedRoute = ({
   allowedRoles = [], 
   requiredPermissions = {} 
 }) => {
-  // Retrieve user from local storage
+  
   const user = JSON.parse(localStorage.getItem("user"));
 
-  // If no user is logged in, redirect to login
   if (!user) {
     return <Navigate to="/login" replace />;
   }
 
-  // Check if user's role is allowed
   if (!allowedRoles.includes(user.role)) {
     return (
       <motion.div 
@@ -44,18 +42,14 @@ const ProtectedRoute = ({
     );
   }
 
-  // If specific permissions are required, check them
   if (requiredPermissions) {
     const { canView, canEdit } = requiredPermissions;
     
-    // Check view permissions
     if (canView && !canView.includes(user.role)) {
       return <Navigate to="/unauthorized" replace />;
     }
 
-    // Check edit permissions
     if (canEdit && !canEdit.includes(user.role)) {
-      // Clone children and pass canEdit prop as false
       return React.cloneElement(children, { 
         canEdit: false,
         canView: true 
@@ -63,7 +57,6 @@ const ProtectedRoute = ({
     }
   }
 
-  // If all checks pass, render the children
   return React.cloneElement(children, { 
     canEdit: true,
     canView: true 

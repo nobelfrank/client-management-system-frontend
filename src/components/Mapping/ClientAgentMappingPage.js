@@ -4,7 +4,7 @@ import MappingCard from './MappingCard';
 import MappingForm from './MappingForm';
 import Notification from '../policy/Notification';
 import { validateMappingData } from './MappingValidation';
-import '../../assets/Styles/Mapping.css';
+import '../policy/Policy.css';
 
 const ClientAgentMappingPage = () => {
   const [mappings, setMappings] = useState([]);
@@ -90,7 +90,6 @@ const ClientAgentMappingPage = () => {
       
       const responseData = await response.json();
       
-      // Extract the data array from the response object
       const clientsArray = responseData.data || [];
       console.log('Processed Clients Data:', clientsArray);
       
@@ -101,8 +100,7 @@ const ClientAgentMappingPage = () => {
       setClients([]);
     }
   };
-
-
+  
  
   const fetchAgents = async () => {
     try {
